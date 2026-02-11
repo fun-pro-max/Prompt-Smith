@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormShield | Pre-Submission Validation Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container nav-flex">
+            <div class="logo">⚙️🛡️ FormShield <span class="badge">MVP</span></div>
+            <div class="selector-wrapper">
+                <select id="templateSelector">
+                    <option value="" disabled selected>Select Form Category (e.g., UPSC, SSC...)</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-grid">
+        <!-- Input Section -->
+        <section class="panel input-panel">
+            <div class="panel-header">
+                <h3>Application Data</h3>
+                <button id="btnAutoFormat" class="btn-text">✨ Auto-Format</button>
+            </div>
+            <form id="activeForm">
+                <div id="formFields">
+                    <p class="empty-state">Please select a category above to start validation.</p>
+                </div>
+            </form>
+        </section>
+
+        <!-- Results Section -->
+        <section class="panel results-panel">
+            <div class="panel-header">
+                <h3>Analysis & Risk Score</h3>
+            </div>
+            
+            <div id="riskMeterBox" class="risk-meter-box">
+                <div class="gauge">
+                    <div class="gauge-body">
+                        <div id="gaugeFill" class="gauge-fill"></div>
+                        <div class="gauge-cover"><span id="riskValue">0%</span></div>
+                    </div>
+                </div>
+                <div id="riskLabel" class="risk-label">No Data</div>
+            </div>
+
+            <div id="validationResults" class="results-list" aria-live="polite">
+                <!-- Issues will appear here -->
+            </div>
+
+            <div class="action-footer" id="actionFooter" style="display: none;">
+                <button id="btnExportJSON" class="btn-secondary">Download JSON</button>
+                <button id="btnCopy" class="btn-primary">Copy Corrected Data</button>
+            </div>
+        </section>
+
+        <!-- Simulator Section -->
+        <section class="panel simulator-panel full-width" id="simContainer" style="display: none;">
+            <div class="panel-header">
+                <h3>"What-if" Eligibility Simulator</h3>
+                <span class="muted">Tweak key variables to see sensitivity results instantly.</span>
+            </div>
+            <div id="simFields" class="sim-grid"></div>
+        </section>
+    </main>
+
+    <!-- Dependencies -->
+    <script src="js/engine.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

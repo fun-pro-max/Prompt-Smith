@@ -1,0 +1,35 @@
+{
+  "templates": [
+    {
+      "id": "upsc_cse_2026",
+      "name": "UPSC Civil Services 2026",
+      "fields": [
+        {"id": "full_name", "type": "text", "label": "Full Name", "required": true},
+        {"id": "dob", "type": "date", "label": "Date of Birth", "required": true},
+        {"id": "category", "type": "select", "label": "Category", "options": ["General", "OBC", "SC", "ST", "EWS"], "required": true},
+        {"id": "qualification", "type": "select", "label": "Qualification", "options": ["Undergraduate", "Graduate", "Postgraduate"], "required": true},
+        {"id": "email", "type": "text", "label": "Email Address", "required": true},
+        {"id": "documents", "type": "file", "label": "ID Proof (PDF)", "required": true}
+      ],
+      "rules": [
+        {"type": "format_check", "field": "email", "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$", "message": "Invalid email format."},
+        {"type": "age_range", "field": "dob", "params": {"min": 21, "max": 32, "ref": "2026-08-01", "relaxation": {"OBC": 3, "SC": 5, "ST": 5}}, "message": "Age eligibility failure (21-32 years)."},
+        {"type": "must_be_in", "field": "qualification", "values": ["Graduate", "Postgraduate"], "message": "Must be a Graduate to apply."}
+      ]
+    },
+    {
+      "id": "nsp_scholarship",
+      "name": "NSP Scholarship 2026",
+      "fields": [
+        {"id": "otr_id", "type": "text", "label": "OTR Number", "required": true},
+        {"id": "income", "type": "number", "label": "Family Income", "required": true},
+        {"id": "phone", "type": "text", "label": "Phone Number", "required": true}
+      ],
+      "rules": [
+        {"type": "format_check", "field": "otr_id", "pattern": "^[A-Z]{2}\\d{10}$", "message": "OTR format must be XX0000000000."},
+        {"type": "numeric_consistency", "field": "income", "params": {"max": 250000}, "message": "Income exceeds ₹2,50,000 threshold."},
+        {"type": "format_check", "field": "phone", "pattern": "^\\d{10}$", "message": "Phone must be exactly 10 digits."}
+      ]
+    }
+  ]
+}
