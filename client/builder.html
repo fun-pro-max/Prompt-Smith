@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Describe Your Idea</title>
+<link rel="stylesheet" href="css/builder.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Describe What You Need</h1>
+<p>Don't engineer it. Just explain it.</p>
+
+<textarea id="idea"
+placeholder="Example: I want a clean portfolio website for a developer with dark theme and project showcase."></textarea>
+
+<textarea id="points"
+placeholder="Optional: Add anything important...
+• Must be responsive
+• Use modern UI
+• Include contact form"></textarea>
+<input
+    type="text"
+    id="deliverable"
+    placeholder="Optional: Desired output format (e.g., HTML code, PDF-style explanation, Markdown, JSON, etc.)"
+/>
+
+
+
+<div class="generate-row">
+    <button type="button" id="generate">Generate Prompt</button>
+    <div id="loadingIndicator" class="loading-hidden">Generating...</div>
+</div>
+
+
+
+<h2>Generated Prompt</h2>
+<button id="copyPrompt" type="button">Copy Prompt</button>
+
+<pre id="result">Your AI-enhanced prompt will appear here...</pre>
+
+</div>
+
+<script src="js/builder.js"></script>
+</body>
+</html>

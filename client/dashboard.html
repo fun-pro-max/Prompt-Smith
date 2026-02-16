@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptSmith</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>What do you want to create today?</h1>
+        <p class="subtitle">Choose your mission. We'll engineer the perfect prompt.</p>
+
+        <div class="grid">
+
+            <div class="card" data-type="coding">💻 Coding Prompt</div>
+            <div class="card" data-type="assignment">📝 Assignment / Article</div>
+            <div class="card" data-type="image">🎨 Image Generation</div>
+            <div class="card" data-type="resume">📄 Resume Builder</div>
+            <div class="card" data-type="research">🔍 Research Task</div>
+            <div class="card" data-type="automation">⚙️ Automation Workflow</div>
+            <div class="card" data-type="custom">🧠 Custom Prompt</div>
+
+        </div>
+    </div>
+    <div id="historyWidget">
+    <h4>Recent Prompts</h4>
+    <div id="dashboardHistory"></div>
+</div>
+
+
+    <script src="js/dashboard.js"></script>
+    <script src="js/dashboardHistory.js"></script>
+
+</body>
+</html>
