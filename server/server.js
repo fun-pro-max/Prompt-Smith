@@ -14,11 +14,21 @@ app.use(express.json());
 // API Route
 app.use("/api/generate", generateRoute);
 
-// Serve static frontend
+// Serve static assets (js, css, images)
 app.use(express.static(path.join(__dirname, "../client")));
 
-// Default route (IMPORTANT: must come BEFORE listen)
+// Dashboard (first screen)
 app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dashboard.html"));
+});
+
+// Style selection page (middle step)
+app.get("/style", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/style.html"));
+});
+
+// Builder page (final tool)
+app.get("/builder", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/builder.html"));
 });
 
