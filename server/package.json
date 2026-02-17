@@ -1,11 +1,11 @@
 {
-  "name": "promptsmith-server",
+  "name": "server",
   "version": "1.0.0",
-  "description": "Backend API for PromptSmith",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
-  },
+  "start": "node server.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
