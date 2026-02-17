@@ -19,7 +19,7 @@ document.getElementById("generate").addEventListener("click", async () => {
     button.textContent = "Working...";
 
     try {
-        const res = await fetch("http://localhost:5000/api/generate", {
+        const res = await fetch("https://promptsmith-api-sz4u.onrender.com/api/generate", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
