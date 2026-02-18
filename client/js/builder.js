@@ -49,16 +49,7 @@ document.getElementById("generate").addEventListener("click", async () => {
     button.disabled = false;
     button.textContent = "Generate Prompt";
 });
-const history = JSON.parse(localStorage.getItem("promptHistory") || "[]");
 
-history.unshift({
-    prompt: data.prompt,
-    date: new Date().toLocaleString()
-});
-
-if (history.length > 20) history.pop();
-
-localStorage.setItem("promptHistory", JSON.stringify(history));
 
 
 // Handle Copy Button
